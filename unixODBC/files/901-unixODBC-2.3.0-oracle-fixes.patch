@@ -1,0 +1,20 @@
+--- orig/SQLConnect.c	2010-04-13 18:36:56.000000000 +0200
++++ unixODBC-2.3.0/DriverManager/SQLConnect.c	2011-03-08 07:28:59.090387798 +0100
+@@ -1872,7 +1872,7 @@
+                 if ( connection -> functions[ i ].func )
+                 {
+                     SQLRETURN ret;
+-                    SQLUSMALLINT supported;
++                    SQLUSMALLINT supported = SQL_TRUE;
+ 
+ 					if ( connection -> driver_act_ver == SQL_OV_ODBC3 )
+ 					{
+@@ -1917,7 +1917,7 @@
+                 if ( connection -> functions[ i ].func )
+                 {
+                     SQLRETURN ret;
+-                    SQLUSMALLINT supported;
++                    SQLUSMALLINT supported = SQL_TRUE;
+ 
+ 					ret = SQLGETFUNCTIONS( connection,
+ 							connection -> driver_dbc,
